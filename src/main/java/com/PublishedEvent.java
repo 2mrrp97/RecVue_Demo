@@ -8,12 +8,15 @@ public class PublishedEvent implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "status")
+	@org.kie.api.definition.type.Label("status")
 	private java.lang.String status;
-	@org.kie.api.definition.type.Label(value = "stepDescription")
+	@org.kie.api.definition.type.Label("stepDescription")
 	private java.lang.String stepDescription;
-	@org.kie.api.definition.type.Label(value = "payload")
+	@org.kie.api.definition.type.Label("payload")
 	private java.lang.String payload;
+
+	@org.kie.api.definition.type.Label(value = "processInstanceId")
+	private java.lang.String processInstanceId;
 
 	public PublishedEvent() {
 	}
@@ -42,11 +45,21 @@ public class PublishedEvent implements java.io.Serializable {
 		this.payload = payload;
 	}
 
+	public java.lang.String getProcessInstanceId() {
+		return this.processInstanceId;
+	}
+
+	public void setProcessInstanceId(java.lang.String processInstanceId) {
+		this.processInstanceId = processInstanceId;
+	}
+
 	public PublishedEvent(java.lang.String status,
-			java.lang.String stepDescription, java.lang.String payload) {
+			java.lang.String stepDescription, java.lang.String payload,
+			java.lang.String processInstanceId) {
 		this.status = status;
 		this.stepDescription = stepDescription;
 		this.payload = payload;
+		this.processInstanceId = processInstanceId;
 	}
 
 }
